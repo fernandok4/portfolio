@@ -1,0 +1,164 @@
+:root {
+    --primary-color: #68bbe3;
+    --primary-color2: #0e86d4;
+    --primary-color3: #055c9d;
+    --primary-color4: #003060;
+    --primary-color-active: #3087b9;
+}
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+.logan {
+    width: 40vw;
+    height: 100vh;
+}
+.title {
+    background-color: #f1f1f1;
+    width: 40vw;
+    text-align: left;
+    font-size: 2.3em;
+    padding-left: 40px;
+    border-bottom-right-radius: 50px;
+    border-bottom: var(--primary-color4) 1px solid;
+    border-right: var(--primary-color4) 1px solid;
+}
+@media screen and (max-width: 1080px) {
+    .title {
+        width: 70vw;
+   }
+}
+@media screen and (max-width: 640px) {
+    .title {
+        width: 90vw;
+   }
+}
+.home-modules {
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--primary-color);
+    border-bottom: var(--primary-color4) 1px solid;
+}
+.home-modules .modules {
+    display: flex;
+    width: 60vw;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.home-modules .modules .module {
+    background-color: var(--primary-color2);
+    height: 50vh;
+    width: calc(30vw - 3px);
+    font-size: 2.5em;
+    line-height: 50vh;
+    border: var(--primary-color4) 1px solid;
+    color: black;
+    text-align: center;
+}
+@media screen and (max-width: 1080px) {
+    .home-modules .modules .module {
+        width: calc(50vw);
+        font-size: 2em;
+        background-color: rgba(0, 0, 0, 0.2);
+   }
+}
+@media screen and (max-width: 640px) {
+    .home-modules .modules .module {
+        width: calc(100vw);
+        font-size: 1.5em;
+        height: 25vh;
+        line-height: 25vh;
+        background-color: rgba(0, 0, 0, 0.2);
+   }
+}
+.home-modules .modules .module:hover {
+    background-color: var(--primary-color4);
+    color: #fefefe;
+    transition: 0.5s;
+    text-decoration: none;
+}
+@media screen and (max-width: 1080px) {
+    .home-modules .modules {
+        width: 100vw;
+   }
+}
+@media screen and (max-width: 640px) {
+    .home-modules .modules {
+        width: 100vw;
+   }
+}
+#about {
+    min-height: 100vh;
+    width: 100vw;
+    background-color: var(--primary-color3);
+    position: relative;
+}
+#about .about-description {
+    width: 60vw;
+    padding: 60px 30px 30px 100px;
+}
+@media screen and (max-width: 1080px) {
+    #about .about-description {
+        padding: 10px;
+        width: 100vw;
+   }
+}
+#about .about-description p {
+    color: white;
+    font-size: 1.5em;
+    text-align: left;
+}
+@media screen and (max-width: 1080px) {
+    #about .about-description p {
+        font-size: 1em;
+   }
+}
+@media screen and (max-width: 640px) {
+    #about .about-description p {
+        width: 90vw;
+        font-size: 1em;
+   }
+}
+#about .about-description::first-letter {
+    font-size: 2em;
+}
+#skill {
+    min-height: 100vh;
+    width: 100vw;
+    background-color: var(--primary-color);
+    position: relative;
+}
+#skill .title {
+    background-color: var(--primary-color4);
+    color: white;
+}
+#skill app-about-skill-one-page {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+}
+#timeline {
+    min-height: 100vh;
+    width: 100vw;
+    background-color: var(--primary-color3);
+    position: relative;
+    z-index: 0;
+}
+
+body {
+    position: relative;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+#skillCanvas{
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+
+    @media screen and (max-width: 1080px) {
+        pointer-events: none; 
+    }
+}
