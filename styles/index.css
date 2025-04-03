@@ -1,147 +1,165 @@
 :root {
-    --primary-color: #68bbe3;
-    --primary-color2: #0e86d4;
-    --primary-color3: #055c9d;
-    --primary-color4: #003060;
-    --primary-color-active: #3087b9;
+    --background-color: #0D0C1D;
+    --star: #2D3CFF;
+
+    /* Texto */
+    --color-text-primary: #E6E9F0;
+    --color-text-light: #FFFFFF;
 }
+
 body {
     font-family: 'Ubuntu', sans-serif;
+    background-color: var(--background-color);
 }
-.logan {
-    width: 40vw;
-    height: 100vh;
-}
+
+
 .title {
-    background-color: #f1f1f1;
+    color: var(--color-text-light);
     width: 40vw;
     text-align: left;
-    font-size: 2.3em;
-    padding-left: 40px;
-    border-bottom-right-radius: 50px;
-    border-bottom: var(--primary-color4) 1px solid;
-    border-right: var(--primary-color4) 1px solid;
-}
-@media screen and (max-width: 1080px) {
-    .title {
-        width: 70vw;
-   }
-}
-@media screen and (max-width: 640px) {
-    .title {
-        width: 90vw;
-   }
-}
-.home-modules {
-    display: flex;
-    justify-content: flex-end;
-    background-color: var(--primary-color);
-    border-bottom: var(--primary-color4) 1px solid;
-}
-.home-modules .modules {
-    display: flex;
-    width: 60vw;
-    min-height: 100vh;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-}
-.home-modules .modules .module {
-    background-color: var(--primary-color2);
-    height: 50vh;
-    width: calc(30vw - 3px);
     font-size: 2.5em;
-    line-height: 50vh;
-    border: var(--primary-color4) 1px solid;
-    color: black;
-    text-align: center;
+    padding-left: 40px;
 }
-@media screen and (max-width: 1080px) {
-    .home-modules .modules .module {
-        width: calc(50vw);
-        font-size: 2em;
-        background-color: rgba(0, 0, 0, 0.2);
-   }
+
+
+.home-modules {
+    justify-content: flex-end;    
+    display: flex;
+    min-height: 100lvh;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20vh;
+    padding-bottom: 5vh;
 }
-@media screen and (max-width: 640px) {
-    .home-modules .modules .module {
-        width: calc(100vw);
-        font-size: 1.5em;
-        height: 25vh;
-        line-height: 25vh;
-        background-color: rgba(0, 0, 0, 0.2);
-   }
+
+.chat-container {
+    display: flex;
+    gap: 1rem;
+    padding: 2rem;
+    width: 80vw;
+    justify-content: space-between;
 }
-.home-modules .modules .module:hover {
-    background-color: var(--primary-color4);
-    color: #fefefe;
-    transition: 0.5s;
-    text-decoration: none;
+
+.speech-bubble {
+    display: flex;
+    background: #1D1A38;
+    padding: 1.5rem;
+    border-radius: 2rem;
+    max-height: calc(80vh - 250px);
+    margin-bottom: 250px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
 }
-@media screen and (max-width: 1080px) {
-    .home-modules .modules {
-        width: 100vw;
-   }
+
+p {
+    font-size: 2rem;
 }
-@media screen and (max-width: 640px) {
-    .home-modules .modules {
-        width: 100vw;
-   }
+
+.speech-bubble > p {
+    max-width: 60vw;
+    color: var(--color-text-primary);
 }
+
+.kanashinha-parent {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.kanashinha {
+    aspect-ratio: 1 / 2;
+    height: 300px;
+    background: linear-gradient(#F3C6A0, #eebc8d);
+    position: relative;
+}
+
+.input-box {
+  display: flex;
+  margin-top: 2rem;
+  width: 80vw;
+  background: #1E1B3A;
+  border: 2px solid #38BDF8;
+  border-radius: 2rem;
+  padding: 1rem 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #E6E9F0;
+}
+
+.send-icon {
+  width: 24px;
+  height: 24px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/e/e5/Paper_plane_font_awesome.svg') no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) { 
+    p {
+        font-size: 1rem;
+    }
+
+    .speech-bubble {
+        max-height: calc(80vh - 150px);
+        margin-bottom: 120px;
+    }
+
+    .kanashinha {
+        height: 150px;
+    }
+}
+
+
+
+
+
+
+
 #about {
     min-height: 100vh;
     width: 100vw;
-    background-color: var(--primary-color3);
     position: relative;
 }
+
 #about .about-description {
     width: 60vw;
     padding: 60px 30px 30px 100px;
 }
-@media screen and (max-width: 1080px) {
-    #about .about-description {
-        padding: 10px;
-        width: 100vw;
-   }
-}
+
 #about .about-description p {
-    color: white;
+    color: var(--color-text-primary);
     font-size: 1.5em;
     text-align: left;
 }
-@media screen and (max-width: 1080px) {
-    #about .about-description p {
-        font-size: 1em;
-   }
-}
-@media screen and (max-width: 640px) {
-    #about .about-description p {
-        width: 90vw;
-        font-size: 1em;
-   }
-}
+
 #about .about-description::first-letter {
     font-size: 2em;
 }
+
 #skill {
     min-height: 100vh;
     width: 100vw;
-    background-color: var(--primary-color);
     position: relative;
 }
-#skill .title {
-    background-color: var(--primary-color4);
-    color: white;
-}
+
 #skill app-about-skill-one-page {
     left: 0;
     top: 0;
     bottom: 0;
     position: absolute;
 }
+
 #timeline {
     min-height: 100vh;
     width: 100vw;
-    background-color: var(--primary-color3);
     position: relative;
     z-index: 0;
 }
@@ -157,8 +175,4 @@ body {
     height: 100vh;
     left: 0;
     top: 0;
-
-    @media screen and (max-width: 1080px) {
-        pointer-events: none; 
-    }
 }

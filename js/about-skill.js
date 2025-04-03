@@ -18,6 +18,7 @@ class AboutSkillOnePageComponent {
     }
 
     createContext() {
+        console.log("createContexto")
         this.engine = new BABYLON.Engine(this.skillCanvas, true);
         this.createScene();
         this.createCamera();
@@ -25,6 +26,7 @@ class AboutSkillOnePageComponent {
     }
 
     createScene() {
+        console.log(this.engine)
         this.scene = new BABYLON.Scene(this.engine);
         this.scene.clearColor = new BABYLON.Color4(0, 0, 0, 0);
     }
@@ -93,8 +95,14 @@ class AboutSkillOnePageComponent {
             plane.billboardMode = BABYLON.Mesh.BILLBOARDMODE_ALL;
             let advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(plane);
             let text = new BABYLON.GUI.TextBlock("text", this.skills[i]);
+            const button = new BABYLON.GUI.Button("button");
+            button.height = 0.15
+            button.width = 0.5
+            button.addControl(text);
+            button.onPointerClickObservable.add((teste) => console.log("cliquei", teste))
             text.fontSize = 60;
-            advancedTexture.addControl(text);
+            text.color = 'white'
+            advancedTexture.addControl(button);
         }
     }
 
@@ -128,10 +136,10 @@ class AboutSkillOnePageComponent {
 }
 
 const component = new AboutSkillOnePageComponent();
-component.skillCanvas = document.querySelector("#skillCanvas");
 
 // Simula o comportamento do decorador ViewChild e do ciclo de vida ngOnInit do Angular
 document.addEventListener("DOMContentLoaded", function () {
+    component.skillCanvas = document.querySelector("#skillCanvas");
     component.ngOnInit();
 });
 

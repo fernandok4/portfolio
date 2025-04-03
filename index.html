@@ -5,25 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" media="screen" href="styles/index.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="styles/bootstrap.min.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/index.css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/babylon.js"></script>
+    <script src="js/babylon.gui.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/about-skill.js"></script>
   </head>
   <body>
     <div>
       <div class="home-modules">
-        <div class="modules">
-          <div class="module" (click)="navigationOnClick(about)">Sobre Mim</div>
-          <div class="module" (click)="navigationOnClick(skill)">
-            Habilidades
+        <div class="chat-container">
+          <div class="speech-bubble">
+            <p>Olá, eu sou o Kanashinha e posso te ajudar respondendo dúvidas sobre o meu Mentor Fernando Kanashiro. O que gostaria de perguntar?</p>
           </div>
-          <div class="module" (click)="navigationOnClick(timeline)">
-            Linha do Tempo
+          <div class="kanashinha-parent">
+            <div class="kanashinha"></div>
           </div>
-          <div class="module" (click)="navigationOnClick(about)">Blog</div>
+        </div>
+        
+      
+        <div class="input-box">
+          <input type="text" placeholder="Digite sua pergunta...">
+          <div class="send-icon"></div>
         </div>
       </div>
     </div>
@@ -60,7 +65,7 @@
       <canvas #skillCanvas id="skillCanvas"></canvas>
     </div>
     <div id="timeline" #timeline>
-      <div class="title">Linha do Tempo</div>
+      <div class="title">Postagens</div>
       <app-about-timeline-beauty></app-about-timeline-beauty>
     </div>
   </body>
