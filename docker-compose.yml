@@ -1,6 +1,6 @@
 services:
   landing:
-    image: nginx:alpine
+    image: nginx:1.31.3-alpine
     container_name: kanashaworks-landing
     ports:
       - "8080:80"
